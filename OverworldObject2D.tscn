@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dra8niee06aio" path="res://OverworldObject2D.gd" id="1_g3ioo"]
 [ext_resource type="Texture2D" uid="uid://de4f8ioms4unk" path="res://LeafGreenTest.png" id="2_atpkd"]
-[ext_resource type="AnimationLibrary" path="/home/wechandoit/Desktop/temp.res" id="3_atpkd"]
+[ext_resource type="AnimationLibrary" path="res://leaf_animations.res" id="3_atpkd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fodak"]
 
