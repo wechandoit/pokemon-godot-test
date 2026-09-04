@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://db30qront3ise"]
 
 [ext_resource type="Texture2D" uid="uid://ca6jwh45eka66" path="res://tiles/overworld/grass_tile_1.png" id="1_71qk0"]
+[ext_resource type="Texture2D" uid="uid://bvrjp0vb481ls" path="res://tiles/overworld/grass_tile_2.png" id="2_o8y1r"]
 [ext_resource type="Texture2D" uid="uid://c72u5v2rxuyo7" path="res://tiles/overworld/grass_tile_3.png" id="3_ww8x5"]
 [ext_resource type="Texture2D" uid="uid://b7wdb2yt3oro2" path="res://tiles/overworld/grass_tile_4.png" id="4_fraaa"]
 [ext_resource type="Texture2D" uid="uid://hya7qmf4220y" path="res://tiles/overworld/grass_tile_8.png" id="5_7jg3a"]
@@ -8,6 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://d3ds6i5w7jm6o" path="res://tiles/overworld/grass_tile_6.png" id="6_ku18n"]
 [ext_resource type="Texture2D" uid="uid://b8orm13pgte1j" path="res://tiles/overworld/grass_tile_7.png" id="7_7jg3a"]
 [ext_resource type="Texture2D" uid="uid://xwd2re3vvl7" path="res://tiles/overworld/grass_tile_12.png" id="8_yhvg6"]
+[ext_resource type="Texture2D" uid="uid://b3siuxoyfc06w" path="res://tiles/overworld/grass_tile_9.png" id="9_2pqgn"]
+[ext_resource type="Texture2D" uid="uid://l8gyr7j645qg" path="res://tiles/overworld/grass_tile_10.png" id="10_e5wkc"]
+[ext_resource type="Texture2D" uid="uid://dp42aid42x0by" path="res://tiles/overworld/grass_tile_11.png" id="11_rrrph"]
+[ext_resource type="Texture2D" uid="uid://bfedmoa6xmnhk" path="res://tiles/overworld/grass_tile_13.png" id="13_616v2"]
+[ext_resource type="Texture2D" uid="uid://supkf5nbpqi" path="res://tiles/overworld/grass_tile_14.png" id="14_hu7dr"]
+[ext_resource type="Texture2D" uid="uid://bys4mxcbt7jvk" path="res://tiles/overworld/grass_tile_15.png" id="15_lun1p"]
+[ext_resource type="Texture2D" uid="uid://bhjb7fbm3g3wd" path="res://tiles/overworld/grass_tile_16.png" id="16_jt0jk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww8x5"]
 shading_mode = 0
@@ -20,12 +28,9 @@ material = SubResource("StandardMaterial3D_ww8x5")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_svwcb"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o8y1r"]
-load_path = "res://.godot/imported/grass_tile_2.png-5b93993d63ef1b03648fe3602c7159f3.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jg3a"]
 shading_mode = 0
-albedo_texture = SubResource("CompressedTexture2D_o8y1r")
+albedo_texture = ExtResource("2_o8y1r")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_yhvg6"]
@@ -79,34 +84,25 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_miad4"]
 material = SubResource("StandardMaterial3D_hn8d7")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2pqgn"]
-load_path = "res://.godot/imported/grass_tile_9.png-484f144afd28205b64332f639bba0279.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5wkc"]
 shading_mode = 0
-albedo_texture = SubResource("CompressedTexture2D_2pqgn")
+albedo_texture = ExtResource("9_2pqgn")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rrrph"]
 material = SubResource("StandardMaterial3D_e5wkc")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_616v2"]
-load_path = "res://.godot/imported/grass_tile_10.png-2aee1e777ef9c825e4c08f655299e0ce.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hu7dr"]
 shading_mode = 0
-albedo_texture = SubResource("CompressedTexture2D_616v2")
+albedo_texture = ExtResource("10_e5wkc")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lun1p"]
 material = SubResource("StandardMaterial3D_hu7dr")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jt0jk"]
-load_path = "res://.godot/imported/grass_tile_11.png-6a34d64495d7a27d1e00c44df52db78f.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lay0q"]
 shading_mode = 0
-albedo_texture = SubResource("CompressedTexture2D_jt0jk")
+albedo_texture = ExtResource("11_rrrph")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m0y8d"]
@@ -120,45 +116,33 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_cxqes"]
 material = SubResource("StandardMaterial3D_miad4")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_machn"]
-load_path = "res://.godot/imported/grass_tile_13.png-2b31ece6e3c52bf7c40957cff5ca0354.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crfng"]
 shading_mode = 0
-albedo_texture = SubResource("CompressedTexture2D_machn")
+albedo_texture = ExtResource("13_616v2")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vf1lk"]
 material = SubResource("StandardMaterial3D_crfng")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y2hge"]
-load_path = "res://.godot/imported/grass_tile_14.png-af3816b120ea3a3fedd1dc78070f231b.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glls0"]
 shading_mode = 0
-albedo_texture = SubResource("CompressedTexture2D_y2hge")
+albedo_texture = ExtResource("14_hu7dr")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_l2fxr"]
 material = SubResource("StandardMaterial3D_glls0")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jrt58"]
-load_path = "res://.godot/imported/grass_tile_15.png-37135c759adaf3c84a7881d660c30736.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_856oo"]
 shading_mode = 0
-albedo_texture = SubResource("CompressedTexture2D_jrt58")
+albedo_texture = ExtResource("15_lun1p")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3qik6"]
 material = SubResource("StandardMaterial3D_856oo")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5j5j"]
-load_path = "res://.godot/imported/grass_tile_16.png-ef8f6c1b3e675fda87805001e0431856.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hggk"]
 shading_mode = 0
-albedo_texture = SubResource("CompressedTexture2D_i5j5j")
+albedo_texture = ExtResource("16_jt0jk")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bv7p1"]
