@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://supkf5nbpqi" path="res://tiles/overworld/grass_tile_14.png" id="14_hu7dr"]
 [ext_resource type="Texture2D" uid="uid://bys4mxcbt7jvk" path="res://tiles/overworld/grass_tile_15.png" id="15_lun1p"]
 [ext_resource type="Texture2D" uid="uid://bhjb7fbm3g3wd" path="res://tiles/overworld/grass_tile_16.png" id="16_jt0jk"]
+[ext_resource type="Texture2D" uid="uid://7cg36mugheog" path="res://tiles/overworld/grass_tile.png" id="17_lay0q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww8x5"]
 shading_mode = 0
@@ -148,10 +149,22 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_bv7p1"]
 material = SubResource("StandardMaterial3D_6hggk")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxqes"]
+albedo_texture = ExtResource("17_lay0q")
+
+[sub_resource type="PrismMesh" id="PrismMesh_fodak"]
+material = SubResource("StandardMaterial3D_cxqes")
+left_to_right = 0.0
+size = Vector3(2, 2, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_machn"]
+data = PackedVector3Array(-1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, 1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
+
 [node name="Node3D" type="Node3D" unique_id=1358116893]
 
 [node name="GrassTile1" type="MeshInstance3D" parent="." unique_id=753275106]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_fraaa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile1" unique_id=341725378]
@@ -161,6 +174,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile2" type="MeshInstance3D" parent="." unique_id=826498824]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_yhvg6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile2" unique_id=964890948]
@@ -170,6 +184,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile3" type="MeshInstance3D" parent="." unique_id=1972508480]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_e5wkc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile3" unique_id=1186322768]
@@ -179,6 +194,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile4" type="MeshInstance3D" parent="." unique_id=84489305]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_616v2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile4" unique_id=10937947]
@@ -188,6 +204,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile5" type="MeshInstance3D" parent="." unique_id=1793165087]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_2pqgn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile5" unique_id=1091938145]
@@ -197,6 +214,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile6" type="MeshInstance3D" parent="." unique_id=1826915036]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_jt0jk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile6" unique_id=977886431]
@@ -206,6 +224,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile7" type="MeshInstance3D" parent="." unique_id=1842575082]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_o8y1r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile7" unique_id=652227859]
@@ -215,6 +234,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile8" type="MeshInstance3D" parent="." unique_id=1965279629]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_miad4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile8" unique_id=1972603202]
@@ -224,6 +244,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile9" type="MeshInstance3D" parent="." unique_id=720984957]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_rrrph")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile9" unique_id=214029168]
@@ -233,6 +254,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile10" type="MeshInstance3D" parent="." unique_id=1147310119]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_lun1p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile10" unique_id=990313743]
@@ -242,6 +264,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile11" type="MeshInstance3D" parent="." unique_id=181934681]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_m0y8d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile11" unique_id=226099112]
@@ -251,6 +274,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile12" type="MeshInstance3D" parent="." unique_id=1561758627]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_cxqes")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile12" unique_id=1202562407]
@@ -260,6 +284,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile13" type="MeshInstance3D" parent="." unique_id=245526197]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_vf1lk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile13" unique_id=2103502618]
@@ -269,6 +294,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile14" type="MeshInstance3D" parent="." unique_id=970529327]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_l2fxr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile14" unique_id=1335063251]
@@ -278,6 +304,7 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile15" type="MeshInstance3D" parent="." unique_id=757161465]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_3qik6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile15" unique_id=1297554024]
@@ -287,9 +314,19 @@ shape = SubResource("ConcavePolygonShape3D_svwcb")
 
 [node name="GrassTile16" type="MeshInstance3D" parent="." unique_id=1005908971]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_bv7p1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassTile16" unique_id=1230470509]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile16/StaticBody3D" unique_id=820396865]
 shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="SlopeTile" type="MeshInstance3D" parent="." unique_id=1301232300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PrismMesh_fodak")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SlopeTile" unique_id=1194919852]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SlopeTile/StaticBody3D" unique_id=1141051130]
+shape = SubResource("ConcavePolygonShape3D_machn")
