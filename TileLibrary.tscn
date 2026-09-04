@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://db30qront3ise"]
+
+[ext_resource type="Texture2D" uid="uid://7cg36mugheog" path="res://grass_tile.png" id="1_7h0kd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwn10"]
+shading_mode = 0
+albedo_texture = ExtResource("1_7h0kd")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fodak"]
+material = SubResource("StandardMaterial3D_pwn10")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_svwcb"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Node3D" type="Node3D" unique_id=1358116893]
+
+[node name="DSFloor" type="MeshInstance3D" parent="." unique_id=753275106]
+mesh = SubResource("PlaneMesh_fodak")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DSFloor" unique_id=341725378]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DSFloor/StaticBody3D" unique_id=569430975]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
