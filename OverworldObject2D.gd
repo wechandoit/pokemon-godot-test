@@ -14,6 +14,9 @@ const FACING_TO_OFFSET = [
 
 enum FACING_VALUES {DOWN, LEFT, UP, RIGHT, INVALID}
 
+const TEX_WALK = preload("res://player_m_walk.png")
+const TEX_RUN = preload("res://player_m_run.png")
+
 const walkSpeed = 4.0
 const runSpeed = walkSpeed * 2.0
 const quickTurnMargin = 0.25 / 3.0
@@ -32,6 +35,7 @@ var yLayer = 0
 var slopeSpeedMultiplier = 1.0
 var moveBlocked = false
 
+@onready var sprite = $Sprite3D
 @onready var animPlayer = $Sprite3D/AnimationPlayer
 @onready var floorCast = $floorCast
 @onready var cam = $Camera3D
@@ -42,17 +46,33 @@ var quickTurnTimer = 0.0
 func _ready():
 	parent = get_parent_node_3d()
 	world = parent.get_node("GridMap")
-	# Cast the base MeshLibrary to your custom class so it recognizes collisionType
 	tileDefs = world.mesh_library as GridmapCollisionHelper 
-	animPlayer.play(str("Idle", dirFacing))
+	play_anim(str("Idle", dirFacing))
 
 func _process(delta):
+	# 1. Unified movement speed calculation
+	var running_input = Input.is_action_pressed("overworld_run")
+	moveVel = runSpeed if running_input else walkSpeed
+
+	# 2. Prevent single-frame texture swapping between grid tiles
+	var is_moving = moveTimer > 0 or hasPlayerInvokedMove()
+	var is_running = running_input and is_moving
+	
+	var target_tex = TEX_RUN if is_running else TEX_WALK
+	if sprite.texture != target_tex:
+		sprite.texture = target_tex
+
+	# 3. Handle visual positioning and step logic
 	if moveTimer > 0 and quickTurnTimer <= 0:
-		if Input.is_action_pressed("overworld_run"):
-			animPlayer.play(str("Run", dirFacing))
-		else:
-			animPlayer.play(str("Walk", dirFacing))
+		var anim_prefix = "Run" if is_running else "Walk"
+		play_anim(str(anim_prefix, dirFacing))
+		
+		position.x = lerp(posTile.x, posTileLast.x, moveTimer) * world.cell_size.x
+		position.z = lerp(posTile.z, posTileLast.z, moveTimer) * world.cell_size.z
 	else:
+		position.x = posTile.x * world.cell_size.x
+		position.z = posTile.z * world.cell_size.z
+		
 		if hasPlayerInvokedMove():
 			if Input.is_action_pressed("overworld_up"):
 				dirFacing = FACING_VALUES.UP
@@ -66,13 +86,13 @@ func _process(delta):
 			if isFacingTileSolid():
 				if not moveBlocked:
 					quickTurnTimer = quickTurnMargin
-					animPlayer.play(str("Walk", dirFacing))
+					play_anim(str("Walk", dirFacing))
 					moveBlocked = true
 			
 			if hasPlayerJustInvokedMove():
 				if dirFacing != lastDirFacing:
 					quickTurnTimer = quickTurnMargin
-					animPlayer.play(str("Walk", dirFacing))
+					play_anim(str("Walk", dirFacing))
 					
 			if quickTurnTimer <= 0:
 				if not isFacingTileSolid():
@@ -81,7 +101,6 @@ func _process(delta):
 					var celId = world.get_cell_item(Vector3i(posTile))
 					slopeSpeedMultiplier = 1.0
 					
-					# Using tileDefs and global class name instead of loaded helper
 					if celId != GridMap.INVALID_CELL_ITEM and tileDefs.collisionType[celId] == GridmapCollisionHelper.TYPES.SLOPE:
 						posTile.y += 1
 						slopeSpeedMultiplier = 0.7
@@ -104,49 +123,32 @@ func _process(delta):
 		if moveTimer <= 0 and quickTurnTimer <= 0:
 			moveTimer = 0.0
 			moveVel = 0.0
-			animPlayer.play(str("Idle", dirFacing))
+			play_anim(str("Idle", dirFacing))
 		
 	moveTimer -= delta * moveVel * slopeSpeedMultiplier
 	quickTurnTimer -= delta
 	lastDirFacing = dirFacing
 
-func _physics_process(_delta):
-	#floorCast.force_raycast_update()
-	#if floorCast.is_colliding():
-	#	global_position.y = floorCast.get_collision_point().y
-	
-	if moveTimer > 0 and quickTurnTimer <= 0:
-		position.x = lerp(posTile.x, posTileLast.x, moveTimer) * world.cell_size.x
-		position.z = lerp(posTile.z, posTileLast.z, moveTimer) * world.cell_size.z
-		
-		if Input.is_action_pressed("overworld_run"):
-			moveVel = runSpeed
-		else:
-			moveVel = walkSpeed
-	else:
-		position.x = posTile.x * world.cell_size.x
-		position.z = posTile.z * world.cell_size.z
+# Helper function to prevent restarting the animation track every frame
+func play_anim(anim_name: String):
+	if animPlayer.current_animation != anim_name:
+		animPlayer.play(anim_name)
 
 func isFacingTileSolid() -> bool:
 	if not tileDefs: 
-		print("TILEDEF BLOCKING")
-		return true # Fallback safeguard
+		return true
 	
 	var standingCel = world.get_cell_item(Vector3i(posTile.x, posTile.y - 1, posTile.z))
 	var checkTile = posTile + FACING_TO_OFFSET[dirFacing]
 	var waistCelId = world.get_cell_item(Vector3i(checkTile))
 	var floorCheckTile = Vector3i(checkTile.x, checkTile.y - 1, checkTile.z)
 	
-	print("Player Tile Y: ", posTile.y, " | Checking Floor Y: ", floorCheckTile.y)
-	
 	if waistCelId != GridMap.INVALID_CELL_ITEM:
 		match tileDefs.collisionType[waistCelId]:
 			GridmapCollisionHelper.TYPES.SOLID:
-				print("SOLID BLOCKING")
 				return true
 			GridmapCollisionHelper.TYPES.SLOPE:
 				if GridmapCollisionHelper.ORTHO_TO_INDEX[FACING_INVERSE[dirFacing]] != world.get_cell_item_orientation(Vector3i(checkTile)):
-					print("SLOPE BLOCKING 1")
 					return true
 	
 	var celId = world.get_cell_item(floorCheckTile)
@@ -155,26 +157,20 @@ func isFacingTileSolid() -> bool:
 	
 	if standingCel != GridMap.INVALID_CELL_ITEM and tileDefs.collisionType[standingCel] == GridmapCollisionHelper.TYPES.SLOPE:
 		if celId != GridMap.INVALID_CELL_ITEM and tileDefs.collisionType[celId] == GridmapCollisionHelper.TYPES.SLOPE and testOri == celOri:
-			print("SLOPE INVALID BLOCKING F")
 			return false
 		if GridmapCollisionHelper.ORTHO_TO_INDEX[dirFacing] != testOri and GridmapCollisionHelper.ORTHO_TO_INDEX[FACING_INVERSE[dirFacing]] != testOri:
-			print("SLOPE INVALID BLOCKING T")
 			return true
 			
 	if celId != GridMap.INVALID_CELL_ITEM and tileDefs.collisionType[celId] == GridmapCollisionHelper.TYPES.SLOPE and GridmapCollisionHelper.ORTHO_TO_INDEX[dirFacing] != celOri:
 		if GridmapCollisionHelper.INDEX_IS_SLOPE[celOri]:
-			print("SLOPE BLOCKING 2 T")
 			return true
-		print("SLOPE BLOCKING F")
 		return false
 		
 	var celIdForSlope = world.get_cell_item(Vector3i(checkTile.x, checkTile.y - 2, checkTile.z))
 	if celId == GridMap.INVALID_CELL_ITEM:
 		if standingCel != GridMap.INVALID_CELL_ITEM and tileDefs.collisionType[standingCel] == GridmapCollisionHelper.TYPES.SLOPE and GridmapCollisionHelper.ORTHO_TO_INDEX[dirFacing] == testOri and celIdForSlope != GridMap.INVALID_CELL_ITEM:
-			print("INVALID BLOCKING F")
 			return false
 		else:
-			print("INVALID BLOCKING T")
 			return true
 			
 	return false

@@ -1,26 +1,27 @@
 [gd_scene format=3 uid="uid://cnrl6fu8v46s8"]
 
 [ext_resource type="Script" uid="uid://dra8niee06aio" path="res://OverworldObject2D.gd" id="1_g3ioo"]
-[ext_resource type="Texture2D" uid="uid://de4f8ioms4unk" path="res://LeafGreenTest.png" id="2_atpkd"]
-[ext_resource type="AnimationLibrary" path="res://leaf_animations.res" id="3_atpkd"]
+[ext_resource type="Texture2D" uid="uid://bo74y8i4ys2u1" path="res://player_m_walk.png" id="2_atpkd"]
+[ext_resource type="AnimationLibrary" uid="uid://bmot8vpei6r82" path="res://leaf_animations.res" id="3_atpkd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fodak"]
 
 [node name="OverworldObject2D" type="CharacterBody3D" unique_id=32075189]
-transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 script = ExtResource("1_g3ioo")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1706292012]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.4, 0)
 cast_shadow = 2
-offset = Vector2(0, 9.5)
+flip_h = true
 billboard = 1
 shaded = true
 double_sided = false
 texture = ExtResource("2_atpkd")
-hframes = 8
-vframes = 6
-frame = 1
+hframes = 4
+vframes = 4
+frame = 11
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D" unique_id=1675079986]
 libraries/ = ExtResource("3_atpkd")

@@ -1,24 +1,311 @@
 [gd_scene format=3 uid="uid://db30qront3ise"]
 
-[ext_resource type="Texture2D" uid="uid://7cg36mugheog" path="res://grass_tile.png" id="1_7h0kd"]
+[ext_resource type="Texture2D" uid="uid://ca6jwh45eka66" path="res://grass_tile_1.png" id="1_71qk0"]
+[ext_resource type="Texture2D" uid="uid://c72u5v2rxuyo7" path="res://grass_tile_3.png" id="3_ww8x5"]
+[ext_resource type="Texture2D" uid="uid://b7wdb2yt3oro2" path="res://grass_tile_4.png" id="4_fraaa"]
+[ext_resource type="Texture2D" uid="uid://hya7qmf4220y" path="res://grass_tile_8.png" id="5_7jg3a"]
+[ext_resource type="Texture2D" uid="uid://csjdqqwmiawcw" path="res://grass_tile_5.png" id="5_fraaa"]
+[ext_resource type="Texture2D" uid="uid://d3ds6i5w7jm6o" path="res://grass_tile_6.png" id="6_ku18n"]
+[ext_resource type="Texture2D" uid="uid://b8orm13pgte1j" path="res://grass_tile_7.png" id="7_7jg3a"]
+[ext_resource type="Texture2D" uid="uid://xwd2re3vvl7" path="res://grass_tile_12.png" id="8_yhvg6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwn10"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww8x5"]
 shading_mode = 0
-albedo_texture = ExtResource("1_7h0kd")
+albedo_texture = ExtResource("1_71qk0")
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_fodak"]
-material = SubResource("StandardMaterial3D_pwn10")
+[sub_resource type="PlaneMesh" id="PlaneMesh_fraaa"]
+material = SubResource("StandardMaterial3D_ww8x5")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_svwcb"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o8y1r"]
+load_path = "res://.godot/imported/grass_tile_2.png-5b93993d63ef1b03648fe3602c7159f3.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jg3a"]
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_o8y1r")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yhvg6"]
+material = SubResource("StandardMaterial3D_7jg3a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhvg6"]
+shading_mode = 0
+albedo_texture = ExtResource("3_ww8x5")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e5wkc"]
+material = SubResource("StandardMaterial3D_yhvg6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrrph"]
+shading_mode = 0
+albedo_texture = ExtResource("4_fraaa")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_616v2"]
+material = SubResource("StandardMaterial3D_rrrph")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8s3r"]
+shading_mode = 0
+albedo_texture = ExtResource("5_fraaa")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2pqgn"]
+material = SubResource("StandardMaterial3D_c8s3r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lun1p"]
+shading_mode = 0
+albedo_texture = ExtResource("6_ku18n")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jt0jk"]
+material = SubResource("StandardMaterial3D_lun1p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0y8d"]
+shading_mode = 0
+albedo_texture = ExtResource("7_7jg3a")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o8y1r"]
+material = SubResource("StandardMaterial3D_m0y8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hn8d7"]
+shading_mode = 0
+albedo_texture = ExtResource("5_7jg3a")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_miad4"]
+material = SubResource("StandardMaterial3D_hn8d7")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2pqgn"]
+load_path = "res://.godot/imported/grass_tile_9.png-484f144afd28205b64332f639bba0279.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5wkc"]
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_2pqgn")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rrrph"]
+material = SubResource("StandardMaterial3D_e5wkc")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_616v2"]
+load_path = "res://.godot/imported/grass_tile_10.png-2aee1e777ef9c825e4c08f655299e0ce.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hu7dr"]
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_616v2")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lun1p"]
+material = SubResource("StandardMaterial3D_hu7dr")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jt0jk"]
+load_path = "res://.godot/imported/grass_tile_11.png-6a34d64495d7a27d1e00c44df52db78f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lay0q"]
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_jt0jk")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m0y8d"]
+material = SubResource("StandardMaterial3D_lay0q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_miad4"]
+shading_mode = 0
+albedo_texture = ExtResource("8_yhvg6")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cxqes"]
+material = SubResource("StandardMaterial3D_miad4")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_machn"]
+load_path = "res://.godot/imported/grass_tile_13.png-2b31ece6e3c52bf7c40957cff5ca0354.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crfng"]
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_machn")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vf1lk"]
+material = SubResource("StandardMaterial3D_crfng")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y2hge"]
+load_path = "res://.godot/imported/grass_tile_14.png-af3816b120ea3a3fedd1dc78070f231b.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glls0"]
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_y2hge")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l2fxr"]
+material = SubResource("StandardMaterial3D_glls0")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jrt58"]
+load_path = "res://.godot/imported/grass_tile_15.png-37135c759adaf3c84a7881d660c30736.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_856oo"]
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_jrt58")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3qik6"]
+material = SubResource("StandardMaterial3D_856oo")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5j5j"]
+load_path = "res://.godot/imported/grass_tile_16.png-ef8f6c1b3e675fda87805001e0431856.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hggk"]
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_i5j5j")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bv7p1"]
+material = SubResource("StandardMaterial3D_6hggk")
+
 [node name="Node3D" type="Node3D" unique_id=1358116893]
 
-[node name="DSFloor" type="MeshInstance3D" parent="." unique_id=753275106]
-mesh = SubResource("PlaneMesh_fodak")
+[node name="GrassTile1" type="MeshInstance3D" parent="." unique_id=753275106]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_fraaa")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DSFloor" unique_id=341725378]
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile1" unique_id=341725378]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DSFloor/StaticBody3D" unique_id=569430975]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile1/StaticBody3D" unique_id=569430975]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile2" type="MeshInstance3D" parent="." unique_id=826498824]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_yhvg6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile2" unique_id=964890948]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile2/StaticBody3D" unique_id=1921564848]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile3" type="MeshInstance3D" parent="." unique_id=1972508480]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_e5wkc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile3" unique_id=1186322768]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile3/StaticBody3D" unique_id=409390983]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile4" type="MeshInstance3D" parent="." unique_id=84489305]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_616v2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile4" unique_id=10937947]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile4/StaticBody3D" unique_id=244420487]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile5" type="MeshInstance3D" parent="." unique_id=1793165087]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_2pqgn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile5" unique_id=1091938145]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile5/StaticBody3D" unique_id=2111579508]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile6" type="MeshInstance3D" parent="." unique_id=1826915036]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_jt0jk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile6" unique_id=977886431]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile6/StaticBody3D" unique_id=572452621]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile7" type="MeshInstance3D" parent="." unique_id=1842575082]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_o8y1r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile7" unique_id=652227859]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile7/StaticBody3D" unique_id=95544601]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile8" type="MeshInstance3D" parent="." unique_id=1965279629]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_miad4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile8" unique_id=1972603202]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile8/StaticBody3D" unique_id=840838803]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile9" type="MeshInstance3D" parent="." unique_id=720984957]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_rrrph")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile9" unique_id=214029168]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile9/StaticBody3D" unique_id=1341849265]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile10" type="MeshInstance3D" parent="." unique_id=1147310119]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_lun1p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile10" unique_id=990313743]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile10/StaticBody3D" unique_id=2104284967]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile11" type="MeshInstance3D" parent="." unique_id=181934681]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_m0y8d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile11" unique_id=226099112]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile11/StaticBody3D" unique_id=1556495834]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile12" type="MeshInstance3D" parent="." unique_id=1561758627]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_cxqes")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile12" unique_id=1202562407]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile12/StaticBody3D" unique_id=1993097761]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile13" type="MeshInstance3D" parent="." unique_id=245526197]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_vf1lk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile13" unique_id=2103502618]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile13/StaticBody3D" unique_id=721854975]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile14" type="MeshInstance3D" parent="." unique_id=970529327]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_l2fxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile14" unique_id=1335063251]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile14/StaticBody3D" unique_id=1756207329]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile15" type="MeshInstance3D" parent="." unique_id=757161465]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_3qik6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile15" unique_id=1297554024]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile15/StaticBody3D" unique_id=1103035463]
+shape = SubResource("ConcavePolygonShape3D_svwcb")
+
+[node name="GrassTile16" type="MeshInstance3D" parent="." unique_id=1005908971]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_bv7p1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTile16" unique_id=1230470509]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTile16/StaticBody3D" unique_id=820396865]
 shape = SubResource("ConcavePolygonShape3D_svwcb")
