@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xwd2re3vvl7"
-path.s3tc="res://.godot/imported/grass_tile_12.png-57fd6aa94d7f646d9da8cea583fa3a6a.s3tc.ctex"
+uid="uid://b8orm13pgte1j"
+path.s3tc="res://.godot/imported/grass_tile_7.png-7d97050a2b156bd4f06ae78d5b4b830e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://grass_tile_12.png"
-dest_files=["res://.godot/imported/grass_tile_12.png-57fd6aa94d7f646d9da8cea583fa3a6a.s3tc.ctex"]
+source_file="res://tiles/overworld/grass_tile_7.png"
+dest_files=["res://.godot/imported/grass_tile_7.png-7d97050a2b156bd4f06ae78d5b4b830e.s3tc.ctex"]
 
 [params]
 

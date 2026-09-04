@@ -50,6 +50,7 @@ func _ready():
 	play_anim(str("Idle", dirFacing))
 
 func _process(delta):
+	
 	# 1. Unified movement speed calculation
 	var running_input = Input.is_action_pressed("overworld_run")
 	moveVel = runSpeed if running_input else walkSpeed
@@ -113,6 +114,8 @@ func _process(delta):
 							posTile.y -= 1
 							slopeSpeedMultiplier = 0.85
 					moveTimer = 1.0
+					var anim_prefix = "Run" if is_running else "Walk"
+					play_anim(str(anim_prefix, dirFacing))
 			
 		else:
 			moveBlocked = false

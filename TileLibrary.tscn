@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://db30qront3ise"]
 
-[ext_resource type="Texture2D" uid="uid://ca6jwh45eka66" path="res://grass_tile_1.png" id="1_71qk0"]
-[ext_resource type="Texture2D" uid="uid://c72u5v2rxuyo7" path="res://grass_tile_3.png" id="3_ww8x5"]
-[ext_resource type="Texture2D" uid="uid://b7wdb2yt3oro2" path="res://grass_tile_4.png" id="4_fraaa"]
-[ext_resource type="Texture2D" uid="uid://hya7qmf4220y" path="res://grass_tile_8.png" id="5_7jg3a"]
-[ext_resource type="Texture2D" uid="uid://csjdqqwmiawcw" path="res://grass_tile_5.png" id="5_fraaa"]
-[ext_resource type="Texture2D" uid="uid://d3ds6i5w7jm6o" path="res://grass_tile_6.png" id="6_ku18n"]
-[ext_resource type="Texture2D" uid="uid://b8orm13pgte1j" path="res://grass_tile_7.png" id="7_7jg3a"]
-[ext_resource type="Texture2D" uid="uid://xwd2re3vvl7" path="res://grass_tile_12.png" id="8_yhvg6"]
+[ext_resource type="Texture2D" uid="uid://ca6jwh45eka66" path="res://tiles/overworld/grass_tile_1.png" id="1_71qk0"]
+[ext_resource type="Texture2D" uid="uid://c72u5v2rxuyo7" path="res://tiles/overworld/grass_tile_3.png" id="3_ww8x5"]
+[ext_resource type="Texture2D" uid="uid://b7wdb2yt3oro2" path="res://tiles/overworld/grass_tile_4.png" id="4_fraaa"]
+[ext_resource type="Texture2D" uid="uid://hya7qmf4220y" path="res://tiles/overworld/grass_tile_8.png" id="5_7jg3a"]
+[ext_resource type="Texture2D" uid="uid://csjdqqwmiawcw" path="res://tiles/overworld/grass_tile_5.png" id="5_fraaa"]
+[ext_resource type="Texture2D" uid="uid://d3ds6i5w7jm6o" path="res://tiles/overworld/grass_tile_6.png" id="6_ku18n"]
+[ext_resource type="Texture2D" uid="uid://b8orm13pgte1j" path="res://tiles/overworld/grass_tile_7.png" id="7_7jg3a"]
+[ext_resource type="Texture2D" uid="uid://xwd2re3vvl7" path="res://tiles/overworld/grass_tile_12.png" id="8_yhvg6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww8x5"]
 shading_mode = 0
